@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI =
   process.env.DB_URL || process.env.MONGO_URI || "mongodb://127.0.0.1:27017/authentication";
-const JWT_SECRET = process.env.TOKEN_SECRET?.trim().replace(/^['"]|['"]$/g, "");
+const JWT_SECRET = process.env.TOKEN_SECRET
 
 if (!JWT_SECRET) {
   throw new Error("TOKEN_SECRET is required in .env");
